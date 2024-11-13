@@ -4,7 +4,7 @@ const ecs = @import("zflecs");
 const Position = struct { x: f32, y: f32 };
 const Walking = struct {};
 
-pub fn main() !void {
+pub fn main() void {
     const world = ecs.init();
     defer _ = ecs.fini(world);
 

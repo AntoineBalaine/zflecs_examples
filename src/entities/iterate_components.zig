@@ -52,7 +52,7 @@ fn iterate_components(world: *ecs.world_t, e: ecs.entity_t) void {
     std.debug.print("\n\n", .{});
 }
 
-pub fn main() !void {
+pub fn main() void {
     const world = ecs.init();
     defer _ = ecs.fini(world);
 

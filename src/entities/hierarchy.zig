@@ -35,7 +35,7 @@ const Star = struct {};
 const Planet = struct {};
 const Moon = struct {};
 
-pub fn main() !void {
+pub fn main() void {
     const world = ecs.init();
     defer _ = ecs.fini(world);
 
