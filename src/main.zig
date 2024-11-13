@@ -1,6 +1,6 @@
 const std = @import("std");
 const ecs = @import("zflecs");
-const entities = @import("entities/entities.zig");
+const entities = @import("entities.zig");
 
 pub fn main() !void {
     entities.basics();
