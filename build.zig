@@ -3,9 +3,9 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     // const target = b.resolveTargetQuery(.{ .cpu_model = .{ .explicit = &std.Target.x86.cpu.x86_64 } });
     const optimize: std.builtin.OptimizeMode = .Debug;
-    const exe = b.addExecutable(.{ .name = "ziflecs", .root_source_file = b.path("src/main.zig"), .target = target, .optimize = optimize });
+    const exe = b.addExecutable(.{ .name = "zflecs_examples", .root_source_file = b.path("src/main.zig"), .target = target, .optimize = optimize });
 
-    const zflecs = b.dependency("zflecs", .{});
+    const zflecs = b.dependency("zflecs", .{ .target = target, .optimize = optimize });
     exe.root_module.addImport("zflecs", zflecs.module("root"));
     exe.linkLibrary(zflecs.artifact("flecs"));
 
